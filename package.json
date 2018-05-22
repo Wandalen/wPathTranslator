@@ -1,0 +1,35 @@
+
+{
+  "name": "wpathtranslator",
+  "version": "0.3.0",
+  "description": "Translate path from real to virtual and vice versa",
+  "author": "Kostiantyn Wandalen <wtory.net@domainsbyproxy.com>",
+  "license": "MIT",
+  "main": "staging/dwtools/amid/path/PatrTranslator.s",
+  "files": [
+    "staging/dwtools/amid",
+    "production"
+  ],
+  "scripts": {
+    "test": "wtest staging",
+    "make_doc": "./doc.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wandalen/wPathTranslator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Wandalen/wPathTranslator/issues"
+  },
+  "dependencies": {
+    "wTools": ""
+  },
+  "devDependencies": {
+    "wTesting": "",
+    "wpathtranslator": "."
+  },
+  "keywords": [
+    "wTools",
+    "Path translator"
+  ]
+}
