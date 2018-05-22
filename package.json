@@ -1,6 +1,6 @@
 {
   "name": "wpathtranslator",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Translate path from real to virtual and vice versa",
   "author": "Kostiantyn Wandalen <wtory.net@domainsbyproxy.com>",
   "license": "MIT",
