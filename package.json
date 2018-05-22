@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "wTools": "",
-    "wPath": ""
+    "wPath": "",
+    "wCopyable": ""
   },
   "devDependencies": {
     "wTesting": "",
