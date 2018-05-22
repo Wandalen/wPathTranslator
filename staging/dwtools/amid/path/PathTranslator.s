@@ -25,6 +25,7 @@ if( typeof module !== 'undefined' )
   var _ = _global_.wTools;
 
   _.include( 'wPath' );
+  _.include( 'wCopyable' );
 
 }
 
