@@ -1,7 +1,7 @@
 
 if( typeof module !== 'undefined' )
 {
-  require( 'wpathtranslatore' );
+  require( 'wpathtranslator' );
 }
 
 var _ = wTools;
