@@ -44,49 +44,49 @@ function simple( test )
   var rooter = new wPathTranslator();
   rooter.realRootPath = '/a';
 
-  test.description = 'realFor relative'; /* */
+  test.case = 'realFor relative'; /* */
 
   var expected = '/a/x';
   var got = rooter.realFor( 'x' );
   test.identical( got,expected );
 
-  test.description = 'realFor absolute'; /* */
+  test.case = 'realFor absolute'; /* */
 
   var expected = '/a/x';
   var got = rooter.realFor( '/x' );
   test.identical( got,expected );
 
-  test.description = 'realFor relative root'; /* */
+  test.case = 'realFor relative root'; /* */
 
   var expected = '/a';
   var got = rooter.realFor( '.' );
   test.identical( got,expected );
 
-  test.description = 'realFor absolute root'; /* */
+  test.case = 'realFor absolute root'; /* */
 
   var expected = '/a';
   var got = rooter.realFor( '/' );
   test.identical( got,expected );
 
-  test.description = 'virtualFor relative'; /* */
+  test.case = 'virtualFor relative'; /* */
 
   var expected = '/x';
   var got = rooter.virtualFor( 'x' );
   test.identical( got,expected );
 
-  test.description = 'virtualFor absolute'; /* */
+  test.case = 'virtualFor absolute'; /* */
 
   var expected = '/x';
   var got = rooter.virtualFor( '/a/x' );
   test.identical( got,expected );
 
-  test.description = 'virtualFor absolute and redundant slashes'; /* */
+  test.case = 'virtualFor absolute and redundant slashes'; /* */
 
   var expected = '/x';
   var got = rooter.virtualFor( '/a/x/' );
   test.identical( got,expected );
 
-  test.description = 'virtualFor relative absolute'; /* */
+  test.case = 'virtualFor relative absolute'; /* */
 
   var expected = '/';
   var got = rooter.virtualFor( '.' );
@@ -116,56 +116,56 @@ function currentDir( test )
   test.identical( rooter.realCurrentDirPath,'/a/b' );
   test.identical( rooter.virtualCurrentDirPath,'/b' );
 
-  test.description = 'realFor relative'; /* */
+  test.case = 'realFor relative'; /* */
 
   var expected = '/a/b/x';
   var got = rooter.realFor( 'x' );
   test.identical( got,expected );
 
-  test.description = 'realFor absolute'; /* */
+  test.case = 'realFor absolute'; /* */
 
   var expected = '/a/x';
   var got = rooter.realFor( '/x' );
   test.identical( got,expected );
 
-  test.description = 'realFor relative root'; /* */
+  test.case = 'realFor relative root'; /* */
 
   var expected = '/a/b';
   var got = rooter.realFor( '.' );
   test.identical( got,expected );
 
-  test.description = 'realFor absolute root'; /* */
+  test.case = 'realFor absolute root'; /* */
 
   var expected = '/a';
   var got = rooter.realFor( '/' );
   test.identical( got,expected );
 
-  test.description = 'virtualFor relative'; /* */
+  test.case = 'virtualFor relative'; /* */
 
   var expected = '/b/x';
   var got = rooter.virtualFor( 'x' );
   test.identical( got,expected );
 
-  test.description = 'virtualFor absolute'; /* */
+  test.case = 'virtualFor absolute'; /* */
 
   var expected = '/b/x';
   var got = rooter.virtualFor( '/a/b/x' );
   test.identical( got,expected );
 
-  test.description = 'virtualFor absolute and redundant slashes'; /* */
+  test.case = 'virtualFor absolute and redundant slashes'; /* */
 
   var expected = '/b/x';
   var got = rooter.virtualFor( '/a/b/x/' );
   test.identical( got,expected );
 
-  test.description = 'virtualFor relative absolute'; /* */
+  test.case = 'virtualFor relative absolute'; /* */
 
   var expected = '/b';
   debugger;
   var got = rooter.virtualFor( '.' );
   test.identical( got,expected );
 
-  test.description = 'change realRootPath'; /* */
+  test.case = 'change realRootPath'; /* */
 
   var rooter = new wPathTranslator({ realRootPath : '/a' });
   test.identical( rooter.realCurrentDirPath,'/a' );
@@ -175,7 +175,7 @@ function currentDir( test )
   test.identical( rooter.realCurrentDirPath,'/a/b/c' );
   test.identical( rooter.virtualCurrentDirPath,'/' );
 
-  test.description = 'change realRootPath sinking'; /* */
+  test.case = 'change realRootPath sinking'; /* */
 
   var rooter = new wPathTranslator({ realRootPath : '/a' });
   rooter.realCurrentDirPath = '/a/b/c';
@@ -195,7 +195,7 @@ function currentDir( test )
   test.identical( rooter.realCurrentDirPath,'/a/b/c/d' );
   test.identical( rooter.virtualCurrentDirPath,'/' );
 
-  test.description = 'change realCurrentDirPath relative'; /* */
+  test.case = 'change realCurrentDirPath relative'; /* */
 
   var rooter = new wPathTranslator({ realRootPath : '/a' });
   rooter.realCurrentDirPath = 'b/c';
@@ -209,7 +209,7 @@ function currentDir( test )
 function make( test )
 {
 
-  test.description = 'make with realCurrentDirPath'; /* */
+  test.case = 'make with realCurrentDirPath'; /* */
 
   var rooter = new wPathTranslator({ realCurrentDirPath : _.pathRefine( __dirname ) });
   test.identical( rooter.realCurrentDirPath,_.pathRefine( __dirname ) );
