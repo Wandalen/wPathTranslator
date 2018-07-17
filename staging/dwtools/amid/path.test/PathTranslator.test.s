@@ -1,6 +1,6 @@
 ( function _PathTranslator_test_s_( ) {
 
-'use strict';
+'use strict'; /**/
 
 var isBrowser = true;
 
