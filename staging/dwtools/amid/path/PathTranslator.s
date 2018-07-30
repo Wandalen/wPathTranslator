@@ -43,7 +43,7 @@ var Self = function wPathTranslator( o )
   return Self.prototype.init.apply( this,arguments );
 }
 
-Self.nameShort = 'PathTranslator';
+Self.shortName = 'PathTranslator';
 
 //
 
@@ -151,7 +151,7 @@ var realRootPathSymbol = Symbol.for( 'realRootPath' );
 var realCurrentDirPathSymbol = Symbol.for( 'realCurrentDirPath' );
 
 // --
-// relationships
+// relations
 // --
 
 var Composes =
@@ -208,7 +208,7 @@ var Proto =
   realRootPathSet : realRootPathSet,
   realCurrentDirPathSet : realCurrentDirPathSet,
 
-  /* relationships */
+  /* relations */
 
   constructor : Self,
   Composes : Composes,
@@ -238,6 +238,6 @@ wCopyable.mixin( Self );
 
 if( typeof module !== 'undefined' && module !== null )
 module[ 'exports' ] = Self;
-_global_[ Self.name ] = wTools[ Self.nameShort ] = Self;
+_global_[ Self.name ] = wTools[ Self.shortName ] = Self;
 
 })();
