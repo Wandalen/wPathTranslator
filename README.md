@@ -8,3 +8,4 @@ Simple class to map paths relative base path to make to make it appear that the 
 npm install
 node sample/Sample.s
 ```
+
