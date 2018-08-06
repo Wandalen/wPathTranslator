@@ -109,7 +109,7 @@ function virtualCurrentDirPathSet( path )
   var self = this;
 
   // debugger;
-  path = _.path.pathNormalize( path );
+  path = _.path.normalize( path );
 
   self[ virtualCurrentDirPathSymbol ] = path;
 
@@ -126,7 +126,7 @@ function realRootPathSet( path )
 {
   var self = this;
 
-  self[ realRootPathSymbol ] = _.path.pathNormalize( path );
+  self[ realRootPathSymbol ] = _.path.normalize( path );
 
   if( self.realCurrentDirPath )
   self.realCurrentDirPathSet( self.realCurrentDirPath );
@@ -139,8 +139,8 @@ function realCurrentDirPathSet( path )
 {
   var self = this;
 
-  path = _.path.pathNormalize( path );
-  path = _.path.pathJoin( self.realRootPath,path );
+  path = _.path.normalize( path );
+  path = _.path.join( self.realRootPath,path );
 
   if( !_.strBegins( path,self.realRootPath ) )
   path = self.realRootPath;
@@ -231,7 +231,7 @@ var Proto =
 
 //
 
-_.classMake
+_.classDeclare
 ({
   cls : Self,
   parent : Parent,
