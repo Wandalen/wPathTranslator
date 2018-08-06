@@ -2,6 +2,14 @@
 
 'use strict';
 
+/**
+  @module Tools/amid/PathTranslator - Simple class to map paths relative base path to make to make it appear that the root of files system is different.  Use PathTranslator to translate paths to virtual path namespace and vise verse.
+*/
+
+/**
+ * @file PathTranslator.s.
+ */
+
 if( typeof module !== 'undefined' )
 {
 
@@ -24,7 +32,7 @@ if( typeof module !== 'undefined' )
 
   var _ = _global_.wTools;
 
-  _.include( 'wPath' );
+  _.include( 'wPathFundamentals'/*ttt*/ );
   _.include( 'wCopyable' );
 
 }
@@ -67,12 +75,12 @@ function realFor( path )
 {
   var self = this;
 
-  path = _.pathsNormalize( path );
-  path = _.pathsJoin( self.virtualCurrentDirPath,path );
+  path = _.path.pathsNormalize( path );
+  path = _.path.pathsJoin( self.virtualCurrentDirPath,path );
 
-  path = _.pathsReroot( self.realRootPath,path );
+  path = _.path.pathsReroot( self.realRootPath,path );
 
-  path = _.pathsNormalize( path );
+  path = _.path.pathsNormalize( path );
 
   return path;
 }
@@ -83,13 +91,13 @@ function virtualFor( path )
 {
   var self = this;
 
-  path = _.pathsNormalize( path );
-  path = _.pathsJoin( self.realCurrentDirPath,path );
+  path = _.path.pathsNormalize( path );
+  path = _.path.pathsJoin( self.realCurrentDirPath,path );
 
   path = _.strReplaceBegin( path,self.realRootPath,'' );
-  path = _.pathsJoin( '/',path );
+  path = _.path.pathsJoin( '/',path );
 
-  path = _.pathsNormalize( path );
+  path = _.path.pathsNormalize( path );
 
   return path;
 }
@@ -101,7 +109,7 @@ function virtualCurrentDirPathSet( path )
   var self = this;
 
   // debugger;
-  path = _.pathNormalize( path );
+  path = _.path.pathNormalize( path );
 
   self[ virtualCurrentDirPathSymbol ] = path;
 
@@ -118,7 +126,7 @@ function realRootPathSet( path )
 {
   var self = this;
 
-  self[ realRootPathSymbol ] = _.pathNormalize( path );
+  self[ realRootPathSymbol ] = _.path.pathNormalize( path );
 
   if( self.realCurrentDirPath )
   self.realCurrentDirPathSet( self.realCurrentDirPath );
@@ -131,8 +139,8 @@ function realCurrentDirPathSet( path )
 {
   var self = this;
 
-  path = _.pathNormalize( path );
-  path = _.pathJoin( self.realRootPath,path );
+  path = _.path.pathNormalize( path );
+  path = _.path.pathJoin( self.realRootPath,path );
 
   if( !_.strBegins( path,self.realRootPath ) )
   path = self.realRootPath;
@@ -210,7 +218,7 @@ var Proto =
 
   /* relations */
 
-  /* constructor * : * Self, */
+  
   Composes : Composes,
   Aggregates : Aggregates,
   Associates : Associates,

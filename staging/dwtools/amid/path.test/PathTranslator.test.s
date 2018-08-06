@@ -211,9 +211,9 @@ function make( test )
 
   test.case = 'make with realCurrentDirPath'; /* */
 
-  var rooter = new wPathTranslator({ realCurrentDirPath : _.pathRefine( __dirname ) });
-  test.identical( rooter.realCurrentDirPath,_.pathRefine( __dirname ) );
-  test.identical( rooter.virtualCurrentDirPath,_.pathRefine( __dirname ) );
+  var rooter = new wPathTranslator({ realCurrentDirPath : _.path.pathRefine( __dirname ) });
+  test.identical( rooter.realCurrentDirPath,_.path.pathRefine( __dirname ) );
+  test.identical( rooter.virtualCurrentDirPath,_.path.pathRefine( __dirname ) );
 
 }
 
