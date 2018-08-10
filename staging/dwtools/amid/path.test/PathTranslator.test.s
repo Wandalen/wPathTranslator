@@ -218,7 +218,7 @@ function make( test )
 }
 
 // --
-// define class
+// declare
 // --
 
 var Self =
