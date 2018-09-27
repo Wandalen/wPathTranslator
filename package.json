@@ -4,9 +4,9 @@
   "description": "Simple class to map paths relative base path to make to make it appear that the root of files system is different.  Use PathTranslator to translate paths to virtual path namespace and vise verse.",
   "author": "Kostiantyn Wandalen <wanalen@willbe.so>",
   "license": "MIT",
-  "main": "staging/dwtools/amid/path/PathTranslator.s",
+  "main": "staging/dwtools/amid/l5/PathTranslator.s",
   "files": [
-    "staging/dwtools/amid",
+    "staging/dwtools/amid/l5",
     "production"
   ],
   "scripts": {
