@@ -70,12 +70,12 @@ function realFor( path )
 {
   var self = this;
 
-  path = _.path.pathsNormalize( path );
-  path = _.path.pathsJoin( self.virtualCurrentDirPath,path );
+  path = _.path.s.normalize( path );
+  path = _.path.s.join( self.virtualCurrentDirPath,path );
 
-  path = _.path.pathsReroot( self.realRootPath,path );
+  path = _.path.s.reroot( self.realRootPath,path );
 
-  path = _.path.pathsNormalize( path );
+  path = _.path.s.normalize( path );
 
   return path;
 }
@@ -86,13 +86,13 @@ function virtualFor( path )
 {
   var self = this;
 
-  path = _.path.pathsNormalize( path );
-  path = _.path.pathsJoin( self.realCurrentDirPath,path );
+  path = _.path.s.normalize( path );
+  path = _.path.s.join( self.realCurrentDirPath,path );
 
   path = _.strReplaceBegin( path,self.realRootPath,'' );
-  path = _.path.pathsJoin( '/',path );
+  path = _.path.s.join( '/',path );
 
-  path = _.path.pathsNormalize( path );
+  path = _.path.s.normalize( path );
 
   return path;
 }
@@ -213,7 +213,7 @@ var Proto =
 
   /* relations */
 
-  
+
   Composes : Composes,
   Aggregates : Aggregates,
   Associates : Associates,
