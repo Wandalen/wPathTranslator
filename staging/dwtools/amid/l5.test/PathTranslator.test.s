@@ -29,7 +29,7 @@ if( typeof module !== 'undefined' )
 
   _.include( 'wTesting' );
 
-  require( '../path/PathTranslator.s' );
+  require( '../l5/PathTranslator.s' );
 
 }
 
