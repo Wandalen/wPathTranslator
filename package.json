@@ -7,7 +7,7 @@
   "main": "proto/dwtools/amid/l5/PathTranslator.s",
   "files": [
     "proto/dwtools/amid/l5",
-    "production"
+    "proto/dwtools/Tools.s", "production"
   ],
   "scripts": {
     "test": "wtest staging",
