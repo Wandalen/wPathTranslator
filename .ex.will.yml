@@ -1,9 +1,10 @@
 
+
 about :
 
   name : wPathTranslator
   description : Simple class to map paths relative base path to make to make it appear that the root of files system is different.  Use PathTranslator to translate paths to virtual path namespace and vise verse.
-  version : 0.3.28
+  version : 0.3.38
   enabled : 1
   interpreters :
   - nodejs >= 6.0.0
@@ -22,31 +23,34 @@ path :
 
   repository : git+https://github.com/Wandalen/wPathTranslator.git
   bugs : https://github.com/Wandalen/wPathTranslator/issues
-  entry.debug : '{path::out.debug}/dwtools/abase/____'
-  entry.release : '{path::out.release}/dwtools/abase/____'
 
 build :
 
-  .debug.raw.export :
-    default : 1
-    filesPath : path::out.debug
-    entryPath : path::entry.debug
-    setting :
+  debug.raw.export :
+    exportDirPath : path::out.debug
+    criterion :
+      default : 1
       debug : 1
       raw : 1
       export : 1
+      tar : 0
     steps :
-      - build::.debug
+      # - build::.debug.raw
       - step::export
 
-  .release.compiled.export :
-    filesPath : path::out.release
-    entryPath : path::entry.release
-    setting :
+  release.compiled.export :
+    exportDirPath : path::out.release
+    criterion :
       debug : 0
       raw : 0
       export : 1
+      tar : 0
     steps :
-      - build::.release.compiled
+      - build::release.compiled
       - step::export
+
+  export.all :
+    steps :
+      - build::debug.raw.export
+      - build::release.compiled.export
 
