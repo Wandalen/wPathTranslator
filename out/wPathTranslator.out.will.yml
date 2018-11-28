@@ -163,8 +163,8 @@ reflector:
       ./dwtools/amid/l5/PathTranslator.s: true
       ./dwtools/amid/l5.test/PathTranslator.test.s: true
     srcFilter:
-      basePath: ./proto
-      prefixPath: .
+      basePath: .
+      prefixPath: proto
     dstFilter:
       basePath: .
       prefixPath: .
