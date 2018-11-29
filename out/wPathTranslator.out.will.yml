@@ -54,10 +54,10 @@ path:
       - ./dwtools/Tools.s
       - ./dwtools/abase
       - ./dwtools/amid
-      - ./dwtools/amid/l5
-      - ./dwtools/amid/l5/PathTranslator.s
-      - ./dwtools/amid/l5.test
-      - ./dwtools/amid/l5.test/PathTranslator.test.s
+      - ./dwtools/amid/l5_mapper
+      - ./dwtools/amid/l5_mapper/PathTranslator.s
+      - ./dwtools/amid/l5_mapper.test
+      - ./dwtools/amid/l5_mapper.test/PathTranslator.test.s
       - ./dwtools/atop
     criterion:
       default: 1
@@ -69,8 +69,8 @@ path:
   exportedTerminals.0:
     path:
       - ./dwtools/Tools.s
-      - ./dwtools/amid/l5/PathTranslator.s
-      - ./dwtools/amid/l5.test/PathTranslator.test.s
+      - ./dwtools/amid/l5_mapper/PathTranslator.s
+      - ./dwtools/amid/l5_mapper.test/PathTranslator.test.s
     criterion:
       default: 1
       debug: 1
@@ -160,8 +160,8 @@ reflector:
     recursive: 0
     filePath:
       ./dwtools/Tools.s: true
-      ./dwtools/amid/l5/PathTranslator.s: true
-      ./dwtools/amid/l5.test/PathTranslator.test.s: true
+      ./dwtools/amid/l5_mapper/PathTranslator.s: true
+      ./dwtools/amid/l5_mapper.test/PathTranslator.test.s: true
     srcFilter:
       basePath: .
       prefixPath: proto
@@ -284,8 +284,8 @@ exported:
     exportedTerminalsPath:
       path:
         - ./dwtools/Tools.s
-        - ./dwtools/amid/l5/PathTranslator.s
-        - ./dwtools/amid/l5.test/PathTranslator.test.s
+        - ./dwtools/amid/l5_mapper/PathTranslator.s
+        - ./dwtools/amid/l5_mapper.test/PathTranslator.test.s
       criterion:
         default: 1
         debug: 1
