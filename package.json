@@ -27,8 +27,7 @@
     "wCopyable": ""
   },
   "devDependencies": {
-    "wTesting": "",
-    "wpathtranslator": "."
+    "wTesting": ""
   },
   "keywords": [
     "wTools",
