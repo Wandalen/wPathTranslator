@@ -3,7 +3,8 @@
 'use strict';
 
 /**
-  @module Tools/amid/PathTranslator - Simple class to map paths relative base path to make to make it appear that the root of files system is different.  Use PathTranslator to translate paths to virtual path namespace and vise verse.
+ * Simple class to map paths relative base path to make to make it appear that the root of files system is different.  Use PathTranslator to translate paths to virtual path namespace and vise verse.
+  @module Tools/amid/PathTranslator
 */
 
 /**
