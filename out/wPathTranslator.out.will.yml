@@ -5,7 +5,7 @@ about:
     Simple class to map paths relative base path to make to make it appear that
     the root of files system is different.  Use PathTranslator to translate
     paths to virtual path namespace and vise verse.
-  version: 0.3.56
+  version: 0.3.57
   enabled: 1
   interpreters:
     - nodejs >= 6.0.0
@@ -25,18 +25,18 @@ path:
   out:
     path: out
   out.debug:
-    path: ./out.debug
+    path: ./out/debug
     criterion:
       debug: 1
   out.release:
-    path: ./out.release
+    path: ./out/release
     criterion:
       debug: 0
   repository:
     path: 'git+https://github.com/Wandalen/wPathTranslator.git'
   bugs:
     path: 'https://github.com/Wandalen/wPathTranslator/issues'
-  exportedDir.0:
+  exportedDir.proto.export:
     path: ./proto
     criterion:
       default: 1
@@ -46,18 +46,18 @@ path:
       export: 1
       tar: 1
       public: 1
-  exportedFiles.0:
+  exportedFiles.proto.export:
     path:
-      - .
-      - ./dwtools
-      - ./dwtools/Tools.s
-      - ./dwtools/abase
-      - ./dwtools/amid
-      - ./dwtools/amid/l5_mapper
-      - ./dwtools/amid/l5_mapper/PathTranslator.s
-      - ./dwtools/amid/l5_mapper.test
-      - ./dwtools/amid/l5_mapper.test/PathTranslator.test.s
-      - ./dwtools/atop
+      - proto
+      - proto/dwtools
+      - proto/dwtools/Tools.s
+      - proto/dwtools/abase
+      - proto/dwtools/amid
+      - proto/dwtools/amid/l5_mapper
+      - proto/dwtools/amid/l5_mapper/PathTranslator.s
+      - proto/dwtools/amid/l5_mapper.test
+      - proto/dwtools/amid/l5_mapper.test/PathTranslator.test.s
+      - proto/dwtools/atop
     criterion:
       default: 1
       debug: 1
@@ -69,11 +69,9 @@ path:
 submodule: {}
 reflector:
   reflect.proto.:
-    filePath:
-      ./proto: ./out.release
     srcFilter:
       filePath:
-        ./proto: ./out.release
+        ./proto: ./out/release
       maskAll:
         excludeAny:
           - !<tag:yaml.org,2002:js/regexp> /(\W|^)node_modules(\W|$)/
@@ -92,11 +90,9 @@ reflector:
     inherit:
       - predefined.*
   reflect.proto.debug:
-    filePath:
-      ./proto: ./out.debug
     srcFilter:
       filePath:
-        ./proto: ./out.debug
+        ./proto: ./out/debug
       maskAll:
         excludeAny:
           - !<tag:yaml.org,2002:js/regexp> /(\W|^)node_modules(\W|$)/
@@ -129,38 +125,43 @@ reflector:
       debug: 1
     inherit:
       - predefined.*
-  exported.0:
-    filePath: ./proto
+  exported.proto.export:
     srcFilter:
-      filePath: ./proto
+      filePath:
+        ./proto: true
       prefixPath: .
-  exportedFiles.0:
+    criterion:
+      default: 1
+      debug: 1
+      raw: 1
+      proto: 1
+      export: 1
+      tar: 1
+      public: 1
+  exportedFiles.proto.export:
     recursive: 0
-    filePath:
-      .: true
-      ./dwtools: true
-      ./dwtools/Tools.s: true
-      ./dwtools/abase: true
-      ./dwtools/amid: true
-      ./dwtools/amid/l5_mapper: true
-      ./dwtools/amid/l5_mapper/PathTranslator.s: true
-      ./dwtools/amid/l5_mapper.test: true
-      ./dwtools/amid/l5_mapper.test/PathTranslator.test.s: true
-      ./dwtools/atop: true
     srcFilter:
       filePath:
         .: true
-        ./dwtools: true
-        ./dwtools/Tools.s: true
-        ./dwtools/abase: true
-        ./dwtools/amid: true
-        ./dwtools/amid/l5_mapper: true
-        ./dwtools/amid/l5_mapper/PathTranslator.s: true
-        ./dwtools/amid/l5_mapper.test: true
-        ./dwtools/amid/l5_mapper.test/PathTranslator.test.s: true
-        ./dwtools/atop: true
+        dwtools: true
+        dwtools/Tools.s: true
+        dwtools/abase: true
+        dwtools/amid: true
+        dwtools/amid/l5_mapper: true
+        dwtools/amid/l5_mapper/PathTranslator.s: true
+        dwtools/amid/l5_mapper.test: true
+        dwtools/amid/l5_mapper.test/PathTranslator.test.s: true
+        dwtools/atop: true
       basePath: .
       prefixPath: proto
+    criterion:
+      default: 1
+      debug: 1
+      raw: 1
+      proto: 1
+      export: 1
+      tar: 1
+      public: 1
 step:
   clean.out.:
     criterion:
@@ -281,7 +282,7 @@ build:
       - 'step::export.proto'
 exported:
   proto.export:
-    version: 0.3.56
+    version: 0.3.57
     criterion:
       default: 1
       debug: 1
@@ -290,7 +291,7 @@ exported:
       export: 1
       tar: 1
       public: 1
-    exportedReflector: 'reflector::exported.0'
-    exportedFilesReflector: 'reflector::exportedFiles.0'
-    exportedDirPath: 'path::exportedDir.0'
-    exportedFilesPath: 'path::exportedFiles.0'
+    exportedReflector: 'reflector::exported.proto.export'
+    exportedFilesReflector: 'reflector::exportedFiles.proto.export'
+    exportedDirPath: 'path::exportedDir.proto.export'
+    exportedFilesPath: 'path::exportedFiles.proto.export'
