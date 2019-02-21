@@ -4,7 +4,7 @@ about :
 
   name : "wPathTranslator"
   description : "Simple class to map paths relative base path to make to make it appear that the root of files system is different.  Use PathTranslator to translate paths to virtual path namespace and vise verse."
-  version : "0.3.58"
+  version : "0.3.60"
   enabled : 1
   interpreters :
   - nodejs >= 6.0.0
