@@ -14,26 +14,9 @@
 if( typeof module !== 'undefined' )
 {
 
-  if( typeof _global_ === 'undefined' || !_global_.wBase )
-  {
-    let toolsPath = '../../../dwtools/Base.s';
-    let toolsExternal = 0;
-    try
-    {
-      require.resolve( toolsPath );
-    }
-    catch( err )
-    {
-      toolsExternal = 1;
-      require( 'wTools' );
-    }
-    if( !toolsExternal )
-    require( toolsPath );
-  }
+  let _ = require( '../../Tools.s' );
 
-  var _ = _global_.wTools;
-
-  _.include( 'wPathFundamentals'/*ttt*/ );
+  _.include( 'wPathFundamentals' );
   _.include( 'wCopyable' );
 
 }
@@ -72,9 +55,9 @@ function realFor( path )
   var self = this;
 
   path = _.path.s.normalize( path );
-  path = _.path.s.join( self.virtualCurrentDirPath,path );
+  path = _.path.s.join( self.virtualCurrentDirPath, path );
 
-  path = _.path.s.reroot( self.realRootPath,path );
+  path = _.path.s.reroot( self.realRootPath, path );
 
   path = _.path.s.normalize( path );
 
@@ -88,10 +71,10 @@ function virtualFor( path )
   var self = this;
 
   path = _.path.s.normalize( path );
-  path = _.path.s.join( self.realCurrentDirPath,path );
+  path = _.path.s.join( self.realCurrentDirPath, path );
 
-  path = _.strReplaceBegin( path,self.realRootPath,'' );
-  path = _.path.s.join( '/',path );
+  path = _.strReplaceBegin( path, self.realRootPath, '' );
+  path = _.path.s.join( '/', path );
 
   path = _.path.s.normalize( path );
 
@@ -136,9 +119,9 @@ function realCurrentDirPathSet( path )
   var self = this;
 
   path = _.path.normalize( path );
-  path = _.path.join( self.realRootPath,path );
+  path = _.path.join( self.realRootPath, path );
 
-  if( !_.strBegins( path,self.realRootPath ) )
+  if( !_.strBegins( path, self.realRootPath ) )
   path = self.realRootPath;
 
   self[ realCurrentDirPathSymbol ] = path;
@@ -203,25 +186,25 @@ var Accessors =
 var Proto =
 {
 
-  init : init,
+  init,
 
-  realFor : realFor,
-  virtualFor : virtualFor,
+  realFor,
+  virtualFor,
 
-  virtualCurrentDirPathSet : virtualCurrentDirPathSet,
-  realRootPathSet : realRootPathSet,
-  realCurrentDirPathSet : realCurrentDirPathSet,
+  virtualCurrentDirPathSet,
+  realRootPathSet,
+  realCurrentDirPathSet,
 
   /* relations */
 
 
-  Composes : Composes,
-  Aggregates : Aggregates,
-  Associates : Associates,
-  Restricts : Restricts,
-  Statics : Statics,
-  Forbids : Forbids,
-  Accessors : Accessors,
+  Composes,
+  Aggregates,
+  Associates,
+  Restricts,
+  Statics,
+  Forbids,
+  Accessors,
 
 }
 
