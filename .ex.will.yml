@@ -21,8 +21,8 @@ execution :
 
 path :
 
-  repository : git+https://github.com/Wandalen/wPathTranslator.git
-  bugs : https://github.com/Wandalen/wPathTranslator/issues
+  repository : git+https:///github.com/Wandalen/wPathTranslator.git
+  bugs : https:///github.com/Wandalen/wPathTranslator/issues
 
 step :
 
