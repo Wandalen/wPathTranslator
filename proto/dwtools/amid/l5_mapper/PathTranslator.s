@@ -32,7 +32,7 @@ if( typeof module !== 'undefined' )
  * rooter.realFor( 'x' );// /a/x
  * 
  * @class wPathTranslator
- * @memberof Tools/mid/PathTranslator
+ * @memberof module:Tools/mid/PathTranslator
 */
 
 var _ = wTools;
