@@ -39,7 +39,7 @@ var _ = wTools;
 var Parent = null;
 var Self = function wPathTranslator( o )
 {
-  return _.instanceConstructor( Self, this, arguments );
+  return _.workpiece.construct( Self, this, arguments );
 }
 
 Self.shortName = 'PathTranslator';
@@ -51,7 +51,7 @@ function init( o )
   var self = this;
 
   _.assert( arguments.length === 0 || arguments.length === 1 );
-  _.instanceInit( self );
+  _.workpiece.initFields( self );
 
   Object.preventExtensions( self );
 
