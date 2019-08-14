@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "wTools": "",
-    "wpathfundamentals": "",
+    "wpathbasic": "",
     "wCopyable": ""
   },
   "devDependencies": {
