@@ -204,7 +204,7 @@ function make( test )
 var Self =
 {
 
-  name : 'Tools/mid/PathTranslator',
+  name : 'Tools.mid.PathTranslator',
   // verbosity : 7,
 
   context :
