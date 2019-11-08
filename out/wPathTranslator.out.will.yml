@@ -2,36 +2,40 @@ format: outwillfile-2.0
 root:
   - wPathTranslator.out
 consistency:
-  ../.ex.will.yml: &ref_0
+  wPathTranslator.out.will.yml: &ref_0
+    hash: 405f8813a03ca9abb3096bb3ca7c5e55
+    size: 38895
+  ../.ex.will.yml: &ref_1
     hash: 41b93f44bb399a93a2dacecd0d3dbec9
     size: 1917
-  ../.im.will.yml: &ref_1
-    hash: 21dce29312a4d8d2b4af1a93ee663886
-    size: 5034
+  ../.im.will.yml: &ref_2
+    hash: 16304740ee96782da6456e8ce7e36049
+    size: 5108
 module:
   wPathTranslator.out:
     about:
       name: wPathTranslator
+      org: noorg
       description: >-
         Simple class to map paths relative base path to make to make it appear
         that the root of files system is different.  Use PathTranslator to
         translate paths to virtual path namespace and vise verse.
       enabled: 1
       version: 0.4.0
-      interpreters: &ref_2
+      interpreters:
         - njs >= 8.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_3
+      keywords:
         - wTools
         - wPathBasic
         - Path translator
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors: &ref_4
+      contributors:
         - Kostiantyn Wandalen <wanalen@willbe.so>
       npm.name: wpathtranslator
-      npm.scripts: &ref_5
+      npm.scripts:
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -62,9 +66,6 @@ module:
       download:
         criterion:
           predefined: 1
-      remote:
-        criterion:
-          predefined: 1
       repository:
         path: 'git+https:///github.com/Wandalen/wPathTranslator.git'
       origins:
@@ -74,15 +75,15 @@ module:
       bugtracker:
         path: 'https:///github.com/Wandalen/wPathTranslator/issues'
       in:
-        criterion:
-          predefined: 0
         path: .
       out:
-        criterion:
-          predefined: 0
         path: .
       temp:
-        path: 'path::out'
+        path:
+          - 'path::out'
+          - ../package-lock.json
+          - ../package.json
+          - ../node_modules
       proto:
         path: ../proto
       export:
@@ -147,11 +148,13 @@ module:
         path: '{path::out.*=}/source/Index.s'
       exported.dir.proto.export:
         criterion:
+          generated: 1
           content: proto
           export: 1
         path: ../proto
       exported.files.proto.export:
         criterion:
+          generated: 1
           content: proto
           export: 1
         path:
@@ -338,6 +341,7 @@ module:
           prefixPath: ../proto
         mandatory: 1
         criterion:
+          generated: 1
           content: proto
           export: 1
       exported.files.proto.export:
@@ -350,6 +354,7 @@ module:
         recursive: 0
         mandatory: 1
         criterion:
+          generated: 1
           content: proto
           export: 1
     step:
@@ -703,6 +708,24 @@ module:
           content: prime
         inherit:
           - files.transpile
+      exported.proto.export:
+        opts:
+          reflector: 'reflector::exported.proto.export*'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.files.proto.export:
+        opts:
+          reflector: 'reflector::exported.files.proto.export*'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
     build:
       proto.export:
         steps:
@@ -791,24 +814,35 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      wPathTranslator.out.will.yml: *ref_0
+      ../.ex.will.yml: *ref_1
+      ../.im.will.yml: *ref_2
   ../:
     about:
       name: wPathTranslator
+      org: noorg
       description: >-
         Simple class to map paths relative base path to make to make it appear
         that the root of files system is different.  Use PathTranslator to
         translate paths to virtual path namespace and vise verse.
       enabled: 1
       version: 0.4.0
-      interpreters: *ref_2
-      keywords: *ref_3
+      interpreters:
+        - njs >= 8.0.0
+        - chrome >= 60.0.0
+        - firefox >= 60.0.0
+      keywords:
+        - wTools
+        - wPathBasic
+        - Path translator
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors: *ref_4
+      contributors:
+        - Kostiantyn Wandalen <wanalen@willbe.so>
       npm.name: wpathtranslator
-      npm.scripts: *ref_5
+      npm.scripts:
+        test: wtest .run proto/**
+        docgen: wdocgen .build proto
     path:
       module.willfiles:
         criterion:
@@ -837,9 +871,6 @@ module:
       download:
         criterion:
           predefined: 1
-      remote:
-        criterion:
-          predefined: 1
       repository:
         path: 'git+https:///github.com/Wandalen/wPathTranslator.git'
       origins:
@@ -849,21 +880,21 @@ module:
       bugtracker:
         path: 'https:///github.com/Wandalen/wPathTranslator/issues'
       in:
-        criterion:
-          predefined: 0
         path: .
       out:
-        criterion:
-          predefined: 0
         path: out
       temp:
-        path: 'path::out'
+        path:
+          - 'path::out'
+          - package-lock.json
+          - package.json
+          - node_modules
       proto:
-        path: ./proto
+        path: proto
       export:
         path: '{path::proto}/**'
       doc:
-        path: ./doc
+        path: doc
       out.raw.debug:
         criterion:
           debug: debug
@@ -1489,5 +1520,8 @@ module:
         hash: 41b93f44bb399a93a2dacecd0d3dbec9
         size: 1917
       ../.im.will.yml:
-        hash: 21dce29312a4d8d2b4af1a93ee663886
-        size: 5034
+        hash: 16304740ee96782da6456e8ce7e36049
+        size: 5108
+      wPathTranslator.out.will.yml:
+        hash: 405f8813a03ca9abb3096bb3ca7c5e55
+        size: 38895
