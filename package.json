@@ -16,7 +16,7 @@
   {
     "url" : "https://github.com/Wandalen/wPathTranslator/issues"
   }, 
-  "dependencies" : { "wTools" : "", "wpathbasic" : "", "wCopyable" : "" }, 
-  "devDependencies" : { "wTesting" : "" }, 
+  "dependencies" : { "wTools" : "alpha", "wpathbasic" : "alpha", "wCopyable" : "alpha" }, 
+  "devDependencies" : { "wTesting" : "alpha" }, 
   "keywords" : [ "wTools", "Path translator" ]
 }
