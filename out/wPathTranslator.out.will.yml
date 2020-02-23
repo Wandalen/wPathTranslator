@@ -2,10 +2,13 @@ format: outwillfile-2.0
 root:
   - wPathTranslator.out
 consistency:
-  ../.ex.will.yml: &ref_0
+  wPathTranslator.out.will.yml: &ref_0
+    hash: 405f8813a03ca9abb3096bb3ca7c5e55
+    size: 38895
+  ../.ex.will.yml: &ref_1
     hash: 41b93f44bb399a93a2dacecd0d3dbec9
     size: 1917
-  ../.im.will.yml: &ref_1
+  ../.im.will.yml: &ref_2
     hash: 16304740ee96782da6456e8ce7e36049
     size: 5108
 module:
@@ -19,20 +22,20 @@ module:
         translate paths to virtual path namespace and vise verse.
       enabled: 1
       version: 0.4.0
-      interpreters: &ref_2
+      interpreters:
         - njs >= 8.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_3
+      keywords:
         - wTools
         - wPathBasic
         - Path translator
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors: &ref_4
+      contributors:
         - Kostiantyn Wandalen <wanalen@willbe.so>
       npm.name: wpathtranslator
-      npm.scripts: &ref_5
+      npm.scripts:
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -705,6 +708,24 @@ module:
           content: prime
         inherit:
           - files.transpile
+      exported.proto.export:
+        opts:
+          reflector: 'reflector::exported.proto.export*'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.files.proto.export:
+        opts:
+          reflector: 'reflector::exported.files.proto.export*'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
     build:
       proto.export:
         steps:
@@ -793,8 +814,9 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      wPathTranslator.out.will.yml: *ref_0
+      ../.ex.will.yml: *ref_1
+      ../.im.will.yml: *ref_2
   ../:
     about:
       name: wPathTranslator
@@ -805,13 +827,22 @@ module:
         translate paths to virtual path namespace and vise verse.
       enabled: 1
       version: 0.4.0
-      interpreters: *ref_2
-      keywords: *ref_3
+      interpreters:
+        - njs >= 8.0.0
+        - chrome >= 60.0.0
+        - firefox >= 60.0.0
+      keywords:
+        - wTools
+        - wPathBasic
+        - Path translator
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors: *ref_4
+      contributors:
+        - Kostiantyn Wandalen <wanalen@willbe.so>
       npm.name: wpathtranslator
-      npm.scripts: *ref_5
+      npm.scripts:
+        test: wtest .run proto/**
+        docgen: wdocgen .build proto
     path:
       module.willfiles:
         criterion:
@@ -1491,3 +1522,6 @@ module:
       ../.im.will.yml:
         hash: 16304740ee96782da6456e8ce7e36049
         size: 5108
+      wPathTranslator.out.will.yml:
+        hash: 405f8813a03ca9abb3096bb3ca7c5e55
+        size: 38895
