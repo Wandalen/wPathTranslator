@@ -5,7 +5,7 @@
 if( typeof module !== 'undefined' )
 {
 
-  let _ = require( '../../Tools.s' );
+  let _ = require( '../../../dwtools/Tools.s' );
 
   _.include( 'wTesting' );
 
@@ -13,7 +13,7 @@ if( typeof module !== 'undefined' )
 
 }
 
-var _ = wTools;
+var _ = _global_.wTools;
 
 // --
 // tests
@@ -204,7 +204,7 @@ function make( test )
 var Self =
 {
 
-  name : 'Tools/mid/PathTranslator',
+  name : 'Tools.mid.PathTranslator',
   // verbosity : 7,
 
   context :

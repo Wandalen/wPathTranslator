@@ -16,7 +16,7 @@ if( typeof module !== 'undefined' )
 
   let _ = require( '../../Tools.s' );
 
-  _.include( 'wPathFundamentals' );
+  _.include( 'wPathBasic' );
   _.include( 'wCopyable' );
 
 }
@@ -26,11 +26,11 @@ if( typeof module !== 'undefined' )
 /**
  * @classdesc Class to map paths relative base path to make it appear that the root of files system is different.
  * @param {Object} o Options map for constructor. {@link module:Tools/mid/PathTranslator.wPathTranslator.Fields Options description }
- * 
+ *
  * @example
  * var rooter = new wPathTranslator({ realRootPath : '/a' });
  * rooter.realFor( 'x' );// /a/x
- * 
+ *
  * @class wPathTranslator
  * @memberof module:Tools/mid/PathTranslator
 */
@@ -65,19 +65,19 @@ function init( o )
 /**
  * @summary Translates virtual path to real.
  * @param {String} path Virtual path.
- * 
+ *
  * @example
  * var rooter = new wPathTranslator({ realRootPath : '/a' });
  * rooter.realFor( 'x' );// /a/x
- * 
+ *
  * @example
  * var rooter = new wPathTranslator({ realRootPath : '/a' });
  * rooter.realFor( '/x' );// /a/x
- * 
+ *
  * @example
  * var rooter = new wPathTranslator({ realRootPath : '/a' });
  * rooter.realFor( '.' );// /a
- * 
+ *
  * @function realFor
  * @memberof module:Tools/mid/PathTranslator.wPathTranslator#
 */
@@ -101,19 +101,19 @@ function realFor( path )
 /**
  * @summary Translates real path to virtual.
  * @param {String} path Real path.
- * 
+ *
  * @example
  * var rooter = new wPathTranslator({ realRootPath : '/a' });
  * rooter.virtualFor( '/x' );// "/x"
- * 
+ *
  * @example
  * var rooter = new wPathTranslator({ realRootPath : '/a' });
  * rooter.virtualFor( '/a/x' );// "/x"
- * 
+ *
  * @example
  * var rooter = new wPathTranslator({ realRootPath : '/a' });
  * rooter.virtualFor( '.' );// "/"
- * 
+ *
  * @function virtualFor
  * @memberof module:Tools/mid/PathTranslator.wPathTranslator#
 */
@@ -138,12 +138,12 @@ function virtualFor( path )
 /**
  * @summary Changes current directory for virtual paths.
  * @param {String} path New path.
- * 
+ *
  * @example
  * var rooter = new wPathTranslator({ realRootPath : '/a' });
  * rooter.virtualCurrentDirPathSet( '/b' );
  * rooter.realFor( 'c' )// "/a/b/c"
- * 
+ *
  * @function virtualCurrentDirPathSet
  * @memberof module:Tools/mid/PathTranslator.wPathTranslator#
 */
@@ -168,12 +168,12 @@ function virtualCurrentDirPathSet( path )
  * @summary Changes root path for real paths.
  * @description Updates path of current directory for real paths.
  * @param {String} path New path.
- * 
+ *
  * @example
  * var rooter = new wPathTranslator();
  * rooter.realRootPathSet( '/a' );
  * rooter.realFor( 'c' )// "/a/c"
- * 
+ *
  * @function realRootPathSet
  * @memberof module:Tools/mid/PathTranslator.wPathTranslator#
 */
@@ -197,12 +197,12 @@ function realRootPathSet( path )
  * @summary Changes current directory for reals paths.
  * @description Updates path of current directory for both types of paths.
  * @param {String} path New path.
- * 
+ *
  * @example
  * var rooter = new wPathTranslator({ realRootPath : '/a' });
  * rooter.realCurrentDirPathSet( 'b' );
  * rooter.virtualFor( 'c' )// "/b/c"
- * 
+ *
  * @function realCurrentDirPathSet
  * @memberof module:Tools/mid/PathTranslator.wPathTranslator#
 */
