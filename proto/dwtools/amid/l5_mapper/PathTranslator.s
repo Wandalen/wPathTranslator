@@ -32,7 +32,8 @@ if( typeof module !== 'undefined' )
  * rooter.realFor( 'x' );// /a/x
  *
  * @class wPathTranslator
- * @memberof module:Tools/mid/PathTranslator
+ * @namespace wTools
+ * @module Tools/mid/PathTranslator
 */
 
 var _ = wTools;
@@ -79,7 +80,9 @@ function init( o )
  * rooter.realFor( '.' );// /a
  *
  * @function realFor
- * @memberof module:Tools/mid/PathTranslator.wPathTranslator#
+ * @class wPathTranslator
+ * @namespace wTools
+ * @module Tools/mid/PathTranslator
 */
 
 function realFor( path )
@@ -115,7 +118,9 @@ function realFor( path )
  * rooter.virtualFor( '.' );// "/"
  *
  * @function virtualFor
- * @memberof module:Tools/mid/PathTranslator.wPathTranslator#
+ * @class wPathTranslator
+ * @namespace wTools
+ * @module Tools/mid/PathTranslator
 */
 
 function virtualFor( path )
@@ -145,7 +150,9 @@ function virtualFor( path )
  * rooter.realFor( 'c' )// "/a/b/c"
  *
  * @function virtualCurrentDirPathSet
- * @memberof module:Tools/mid/PathTranslator.wPathTranslator#
+ * @class wPathTranslator
+ * @namespace wTools
+ * @module Tools/mid/PathTranslator
 */
 
 function virtualCurrentDirPathSet( path )
@@ -175,7 +182,9 @@ function virtualCurrentDirPathSet( path )
  * rooter.realFor( 'c' )// "/a/c"
  *
  * @function realRootPathSet
- * @memberof module:Tools/mid/PathTranslator.wPathTranslator#
+ * @class wPathTranslator
+ * @namespace wTools
+ * @module Tools/mid/PathTranslator
 */
 
 //
@@ -204,7 +213,9 @@ function realRootPathSet( path )
  * rooter.virtualFor( 'c' )// "/b/c"
  *
  * @function realCurrentDirPathSet
- * @memberof module:Tools/mid/PathTranslator.wPathTranslator#
+ * @class wPathTranslator
+ * @namespace wTools
+ * @module Tools/mid/PathTranslator
 */
 
 function realCurrentDirPathSet( path )
@@ -235,7 +246,7 @@ var realCurrentDirPathSymbol = Symbol.for( 'realCurrentDirPath' );
  * @property {String} virtualCurrentDirPath='/' Current directory for virtual paths.
  * @property {String} realRootPath='/' Root path for real path.
  * @property {String} realCurrentDirPath='/' Current directory for real paths.
- * @memberof module:Tools/mid/PathTranslator.wPathTranslator
+ * @module Tools/mid/PathTranslator
  */
 
 // --
