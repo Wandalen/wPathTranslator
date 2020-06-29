@@ -7,10 +7,6 @@
   @module Tools/mid/PathTranslator
 */
 
-/**
- * @file PathTranslator.s.
- */
-
 if( typeof module !== 'undefined' )
 {
 
