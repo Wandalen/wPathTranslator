@@ -32,9 +32,9 @@ if( typeof module !== 'undefined' )
  * @module Tools/mid/PathTranslator
 */
 
-var _ = wTools;
-var Parent = null;
-var Self = function wPathTranslator( o )
+let _ = wTools;
+let Parent = null;
+let Self = function wPathTranslator( o )
 {
   return _.workpiece.construct( Self, this, arguments );
 }

@@ -4,6 +4,6 @@ if( typeof module !== 'undefined' )
   require( 'wpathtranslator' );
 }
 
-var _ = wTools;
+let _ = wTools;
 
 var translator = new _.PathTranslator();
