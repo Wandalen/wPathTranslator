@@ -1,1 +1,22 @@
-{"name":"wpathtranslator","version":"0.3.168","description":"Simple class to map paths relative base path to make to make it appear that the root of files system is different.  Use PathTranslator to translate paths to virtual path namespace and vise verse.","author":"Kostiantyn Wandalen <wanalen@01.school>","license":"MIT","main":"proto/wtools/amid/l5_mapper/PathTranslator.s","files":["proto/wtools/amid/l5_mapper","proto/wtools/Tools.s","out"],"scripts":{"test":"wtest .run 'proto/**' rapidity:-3","docgen":"wdocgen proto"},"repository":{"type":"git","url":"https://github.com/Wandalen/wPathTranslator.git"},"bugs":{"url":"https://github.com/Wandalen/wPathTranslator/issues"},"dependencies":{"wTools":"alpha","wpathbasic":"alpha","wCopyable":"alpha"},"devDependencies":{"wTesting":"alpha"},"keywords":["wTools","Path translator"]}
+{
+  "name" : "wpathtranslator",
+  "version" : "0.3.169",
+  "description" : "Simple class to map paths relative base path to make to make it appear that the root of files system is different.  Use PathTranslator to translate paths to virtual path namespace and vise verse.",
+  "author" : "Kostiantyn Wandalen <wanalen@01.school>",
+  "license" : "MIT",
+  "main" : "proto/wtools/amid/l5_mapper/PathTranslator.s",
+  "files" : [ "proto/wtools/amid/l5_mapper", "proto/wtools/Tools.s", "out" ],
+  "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "https://github.com/Wandalen/wPathTranslator.git"
+  },
+  "bugs" :
+  {
+    "url" : "https://github.com/Wandalen/wPathTranslator/issues"
+  },
+  "dependencies" : { "wTools" : "alpha", "wpathbasic" : "alpha", "wCopyable" : "alpha" },
+  "devDependencies" : { "wTesting" : "alpha" },
+  "keywords" : [ "wTools", "Path translator" ]
+}
