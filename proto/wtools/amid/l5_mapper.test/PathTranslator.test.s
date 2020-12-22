@@ -45,7 +45,8 @@ function simple( test )
 
   test.case = 'realFor relative root';
 
-  var expected = '/a';
+  // var expected = '/a';
+  var expected = '/a/';
   var got = rooter.realFor( '.' );
   test.identical( got, expected );
 
@@ -53,7 +54,8 @@ function simple( test )
 
   test.case = 'realFor absolute root';
 
-  var expected = '/a';
+  // var expected = '/a';
+  var expected = '/a/';
   var got = rooter.realFor( '/' );
   test.identical( got, expected );
 
@@ -77,7 +79,8 @@ function simple( test )
 
   test.case = 'virtualFor absolute and redundant slashes';
 
-  var expected = '/x';
+  // var expected = '/x';
+  var expected = '/x/';
   var got = rooter.virtualFor( '/a/x/' );
   test.identical( got, expected );
 
@@ -141,7 +144,8 @@ function currentDir( test )
 
   test.case = 'realFor absolute root';
 
-  var expected = '/a';
+  // var expected = '/a';
+  var expected = '/a/';
   var got = rooter.realFor( '/' );
   test.identical( got, expected );
 
@@ -165,7 +169,8 @@ function currentDir( test )
 
   test.case = 'virtualFor absolute and redundant slashes';
 
-  var expected = '/b/x';
+  // var expected = '/b/x';
+  var expected = '/b/x/';
   var got = rooter.virtualFor( '/a/b/x/' );
   test.identical( got, expected );
 
