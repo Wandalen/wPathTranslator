@@ -7,3 +7,5 @@ if( typeof module !== 'undefined' )
 let _ = wTools;
 
 var translator = new _.PathTranslator();
+
+console.log( translator );
