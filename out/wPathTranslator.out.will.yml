@@ -2,15 +2,12 @@ format: outwillfile-2.0
 root:
   - wPathTranslator.out
 consistency:
-  wPathTranslator.out.will.yml: &ref_0
-    hash: d77797d984db4e4d354a251ba94db267
-    size: 38719
-  ../.ex.will.yml: &ref_1
+  ../.ex.will.yml: &ref_0
     hash: 27c394c0f5b7df39959c98cc974b1348
     size: 1918
-  ../.im.will.yml: &ref_2
-    hash: ef78d7bec6a4bd0932538213083eb346
-    size: 5105
+  ../.im.will.yml: &ref_1
+    hash: de06795c70de35710639acf751608ee8
+    size: 5213
 module:
   wPathTranslator.out:
     about:
@@ -22,20 +19,20 @@ module:
         translate paths to virtual path namespace and vise verse.
       enabled: 1
       version: 0.4.0
-      interpreters:
+      interpreters: &ref_2
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords:
+      keywords: &ref_3
         - wTools
         - wPathBasic
         - Path translator
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
+      contributors: &ref_4
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wpathtranslator
-      npm.scripts:
+      npm.scripts: &ref_5
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -190,6 +187,12 @@ module:
           development: 1
       wTesting:
         path: 'npm:///wTesting'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
+      eslint:
+        path: 'npm:///eslint#7.1.0'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -701,24 +704,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -807,9 +792,8 @@ module:
           content: proto
           export: 1
     consistency:
-      wPathTranslator.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../.ex.will.yml: *ref_0
+      ../.im.will.yml: *ref_1
   ../:
     about:
       name: wPathTranslator
@@ -820,22 +804,13 @@ module:
         translate paths to virtual path namespace and vise verse.
       enabled: 1
       version: 0.4.0
-      interpreters:
-        - njs >= 10.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords:
-        - wTools
-        - wPathBasic
-        - Path translator
+      interpreters: *ref_2
+      keywords: *ref_3
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
+      contributors: *ref_4
       npm.name: wpathtranslator
-      npm.scripts:
-        test: wtest .run proto/**
-        docgen: wdocgen .build proto
+      npm.scripts: *ref_5
     path:
       module.willfiles:
         criterion:
@@ -965,6 +940,12 @@ module:
           development: 1
       wTesting:
         path: 'npm:///wTesting'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
+      eslint:
+        path: 'npm:///eslint#7.1.0'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -1504,6 +1485,5 @@ module:
         hash: 27c394c0f5b7df39959c98cc974b1348
         size: 1918
       ../.im.will.yml:
-        hash: ef78d7bec6a4bd0932538213083eb346
-        size: 5105
-      wPathTranslator.out.will.yml: *ref_0
+        hash: de06795c70de35710639acf751608ee8
+        size: 5213
