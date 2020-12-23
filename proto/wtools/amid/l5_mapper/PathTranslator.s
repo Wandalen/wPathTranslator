@@ -1,4 +1,5 @@
-( function _PathTranslator_s_() {
+( function _PathTranslator_s_()
+{
 
 'use strict';
 
@@ -34,7 +35,8 @@ if( typeof module !== 'undefined' )
 
 let _ = wTools;
 let Parent = null;
-let Self = function wPathTranslator( o )
+let Self = wPathTranslator;
+function wPathTranslator( o )
 {
   return _.workpiece.construct( Self, this, arguments );
 }
