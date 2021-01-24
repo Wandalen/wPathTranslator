@@ -8,7 +8,7 @@ Simple class to map paths relative base path to make to make it appear that the 
 git clone https://github.com/Wandalen/wPathTranslator
 cd wPathTranslator
 npm install
-node sample/Sample.s
+node sample/trivial/Sample.s
 ```
 
 ## To add to your project
