@@ -179,7 +179,6 @@ function currentDir( test )
   test.case = 'virtualFor relative absolute';
 
   var expected = '/b';
-  debugger;
   var got = rooter.virtualFor( '.' );
   test.identical( got, expected );
 
@@ -212,7 +211,6 @@ function currentDir( test )
   test.identical( rooter.realCurrentDirPath, '/a/b/c' );
   test.identical( rooter.virtualCurrentDirPath, '/' );
 
-  debugger;
   rooter.realRootPath = '/a/b/c/d';
   test.identical( rooter.realCurrentDirPath, '/a/b/c/d' );
   test.identical( rooter.virtualCurrentDirPath, '/' );
