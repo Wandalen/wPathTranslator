@@ -11,7 +11,7 @@
 if( typeof module !== 'undefined' )
 {
 
-  let _ = require( '../../Tools.s' );
+  const _ = require( '../../Tools.s' );
 
   _.include( 'wPathBasic' );
   _.include( 'wCopyable' );
@@ -34,8 +34,8 @@ if( typeof module !== 'undefined' )
 */
 
 let _ = wTools;
-let Parent = null;
-let Self = wPathTranslator;
+const Parent = null;
+const Self = wPathTranslator;
 function wPathTranslator( o )
 {
   return _.workpiece.construct( Self, this, arguments );
@@ -293,7 +293,7 @@ var Accessors =
 // declare
 // --
 
-var Proto =
+const Proto =
 {
 
   init,
