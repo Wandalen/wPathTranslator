@@ -83,8 +83,8 @@ path:
       raw: compiled
       content: prime
   npm.proto.entry:
-    - /pro/module/wPathTranslator/proto/wtools/amid/l5_mapper/PathTranslator.s
-    - /pro/module/wPathTranslator/proto/node_modules/wpathtranslator
+    - proto/wtools/amid/l5_mapper/PathTranslator.s
+    - proto/node_modules/wpathtranslator
 reflector:
   reflect.proto:
     inherit: predefined.*
