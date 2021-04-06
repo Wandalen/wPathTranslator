@@ -11,7 +11,7 @@
 if( typeof module !== 'undefined' )
 {
 
-  const _ = require( '../../Tools.s' );
+  const _ = require( 'Tools' );
 
   _.include( 'wPathBasic' );
   _.include( 'wCopyable' );
