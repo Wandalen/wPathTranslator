@@ -33,7 +33,7 @@ if( typeof module !== 'undefined' )
  * @module Tools/mid/PathTranslator
 */
 
-let _ = wTools;
+const _ = _global_.wTools;
 const Parent = null;
 const Self = wPathTranslator;
 function wPathTranslator( o )

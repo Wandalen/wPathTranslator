@@ -5,13 +5,9 @@
 
 if( typeof module !== 'undefined' )
 {
-
-  let _ = require( '../../node_modules/Tools' );
-
+  const _ = require( 'Tools' );
   _.include( 'wTesting' );
-
   require( '../l5_mapper/PathTranslator.s' );
-
 }
 
 const _ = _global_.wTools;
