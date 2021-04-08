@@ -1530,6 +1530,4 @@ module:
       ../.im.will.yml:
         hash: 7bf71cb138b401979c03e255667a5d86
         size: 5134
-      wPathTranslator.out.will.yml:
-        hash: 66a3b277cfecc38d3b4a44e02f87c58d
-        size: 39401
+      wPathTranslator.out.will.yml: *ref_0
