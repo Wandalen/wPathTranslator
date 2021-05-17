@@ -2,12 +2,9 @@ format: outwillfile-2.0
 root:
   - wPathTranslator.out
 consistency:
-  ../.ex.will.yml: &ref_0
-    hash: 27c394c0f5b7df39959c98cc974b1348
-    size: 1918
-  ../.im.will.yml: &ref_1
-    hash: 7bf71cb138b401979c03e255667a5d86
-    size: 5134
+  ../will.yml: &ref_0
+    hash: c498348bcfe8c44da0c79ee93b486317
+    size: 6824
 module:
   wPathTranslator.out:
     about:
@@ -19,20 +16,20 @@ module:
         translate paths to virtual path namespace and vise verse.
       enabled: 1
       version: 0.4.0
-      interpreters: &ref_2
-        - njs >= 10.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords: &ref_3
+      license: MIT
+      npm.name: wpathtranslator
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: &ref_1
         - wTools
         - wPathBasic
         - Path translator
-      license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: &ref_4
+      contributors: &ref_2
         - Kostiantyn Wandalen <wanalen@01.school>
-      npm.name: wpathtranslator
-      npm.scripts: &ref_5
+      interpreters: &ref_3
+        - njs >= 10.0.0
+        - chrome >= 60.0.0
+        - firefox >= 60.0.0
+      npm.scripts: &ref_4
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -47,15 +44,11 @@ module:
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.in:
         criterion:
           predefined: 1
@@ -178,7 +171,7 @@ module:
         path: 'npm:///wTools'
         autoExporting: 0
         enabled: 0
-      wPathBasic:
+      wpathbasic:
         path: 'npm:///wpathbasic'
         autoExporting: 0
         enabled: 0
@@ -799,8 +792,7 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      ../will.yml: *ref_0
   ../:
     about:
       name: wPathTranslator
@@ -811,26 +803,22 @@ module:
         translate paths to virtual path namespace and vise verse.
       enabled: 1
       version: 0.4.0
-      interpreters: *ref_2
-      keywords: *ref_3
       license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: *ref_4
       npm.name: wpathtranslator
-      npm.scripts: *ref_5
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: *ref_1
+      contributors: *ref_2
+      interpreters: *ref_3
+      npm.scripts: *ref_4
     path:
       module.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
@@ -936,7 +924,7 @@ module:
         path: 'npm:///wTools'
         autoExporting: 0
         enabled: 0
-      wPathBasic:
+      wpathbasic:
         path: 'npm:///wpathbasic'
         autoExporting: 0
         enabled: 0
@@ -1493,9 +1481,6 @@ module:
           - 'build::release'
           - 'build::npm'
     consistency:
-      ../.ex.will.yml:
-        hash: 27c394c0f5b7df39959c98cc974b1348
-        size: 1918
-      ../.im.will.yml:
-        hash: 7bf71cb138b401979c03e255667a5d86
-        size: 5134
+      ../will.yml:
+        hash: c498348bcfe8c44da0c79ee93b486317
+        size: 6824
