@@ -5,7 +5,7 @@
   "author" : "Kostiantyn Wandalen <wanalen@01.school>",
   "license" : "MIT",
   "main" : "proto/node_modules/wpathtranslator",
-  "files" : [ "proto/wtools/amid/l5_mapper", "out", "proto/node_modules" ],
+  "files" : [ "proto/wtools/amid/l5_mapper", "out", "proto/node_modules", "proto/node_modules/Tools", "proto/node_modules/wpathtranslator" ],
   "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
   "repository" :
   {
