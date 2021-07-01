@@ -1,22 +1,39 @@
 {
-  "name" : "wpathtranslator",
-  "version" : "0.3.233",
-  "description" : "Simple class to map paths relative base path to make to make it appear that the root of files system is different.  Use PathTranslator to translate paths to virtual path namespace and vise verse.",
-  "author" : "Kostiantyn Wandalen <wanalen@01.school>",
-  "license" : "MIT",
-  "main" : "proto/node_modules/wpathtranslator",
-  "files" : [ "proto/wtools/amid/l5_mapper", "out", "proto/node_modules", "proto/node_modules/Tools", "proto/node_modules/wpathtranslator" ],
-  "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
-  "repository" :
-  {
-    "type" : "git",
-    "url" : "https://github.com/Wandalen/wPathTranslator.git"
+  "name": "wpathtranslator",
+  "version": "0.3.234",
+  "description": "Simple class to map paths relative base path to make to make it appear that the root of files system is different.  Use PathTranslator to translate paths to virtual path namespace and vise verse.",
+  "author": "Kostiantyn Wandalen <wanalen@01.school>",
+  "license": "MIT",
+  "main": "proto/node_modules/wpathtranslator",
+  "files": [
+    "proto/wtools/amid/l5_mapper",
+    "out",
+    "proto/node_modules",
+    "proto/node_modules/Tools",
+    "proto/node_modules/wpathtranslator"
+  ],
+  "scripts": {
+    "test": "wtest .run 'proto/**' rapidity:-3",
+    "docgen": "wdocgen proto"
   },
-  "bugs" :
-  {
-    "url" : "https://github.com/Wandalen/wPathTranslator/issues"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wandalen/wPathTranslator.git"
   },
-  "dependencies" : { "wTools" : "gamma", "wpathbasic" : "gamma", "wCopyable" : "gamma" },
-  "devDependencies" : { "eslint" : "7.1.0", "wTesting" : "gamma" },
-  "keywords" : [ "wTools", "Path translator" ]
+  "bugs": {
+    "url": "https://github.com/Wandalen/wPathTranslator/issues"
+  },
+  "dependencies": {
+    "wTools": "gamma",
+    "wpathbasic": "gamma",
+    "wCopyable": "gamma"
+  },
+  "devDependencies": {
+    "wTesting": "gamma",
+    "eslint": "7.1.0"
+  },
+  "keywords": [
+    "wTools",
+    "Path translator"
+  ]
 }
