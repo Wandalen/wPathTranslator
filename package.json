@@ -1,6 +1,6 @@
 {
   "name": "wpathtranslator",
-  "version": "0.3.234",
+  "version": "0.3.235",
   "description": "Simple class to map paths relative base path to make to make it appear that the root of files system is different.  Use PathTranslator to translate paths to virtual path namespace and vise verse.",
   "author": "Kostiantyn Wandalen <wanalen@01.school>",
   "license": "MIT",
@@ -24,12 +24,12 @@
     "url": "https://github.com/Wandalen/wPathTranslator/issues"
   },
   "dependencies": {
-    "wTools": "gamma",
-    "wpathbasic": "gamma",
-    "wCopyable": "gamma"
+    "wTools": "stable",
+    "wpathbasic": "stable",
+    "wCopyable": "stable"
   },
   "devDependencies": {
-    "wTesting": "gamma",
+    "wTesting": "stable",
     "eslint": "7.1.0"
   },
   "keywords": [
