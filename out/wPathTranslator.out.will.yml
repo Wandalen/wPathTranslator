@@ -3,8 +3,8 @@ root:
   - wPathTranslator.out
 consistency:
   ../will.yml: &ref_0
-    hash: c498348bcfe8c44da0c79ee93b486317
-    size: 6824
+    hash: 490e6494bcba78bb0d45c5fc6bbf56f8
+    size: 6683
 module:
   wPathTranslator.out:
     about:
@@ -378,9 +378,6 @@ module:
           content: npm
         inherit:
           - module.export
-      npm.publish:
-        opts:
-          shell: npm publish
       npm.generate.debug.raw:
         opts:
           entryPath: 'path::entry.out.*=1'
@@ -716,12 +713,6 @@ module:
           - 'step::doc.export'
         criterion:
           content: doc
-          export: 1
-      npm.export:
-        steps:
-          - 'step::npm.publish'
-        criterion:
-          content: npm
           export: 1
       export:
         steps:
@@ -1080,9 +1071,6 @@ module:
           content: npm
         inherit:
           - module.export
-      npm.publish:
-        opts:
-          shell: npm publish
       npm.generate.debug.raw:
         opts:
           entryPath: 'path::entry.out.*=1'
@@ -1419,12 +1407,6 @@ module:
         criterion:
           content: doc
           export: 1
-      npm.export:
-        steps:
-          - 'step::npm.publish'
-        criterion:
-          content: npm
-          export: 1
       export:
         steps:
           - 'build::proto.export'
@@ -1482,5 +1464,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: c498348bcfe8c44da0c79ee93b486317
-        size: 6824
+        hash: 490e6494bcba78bb0d45c5fc6bbf56f8
+        size: 6683
