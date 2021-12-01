@@ -3,8 +3,8 @@ root:
   - wPathTranslator.out
 consistency:
   ../will.yml: &ref_0
-    hash: 490e6494bcba78bb0d45c5fc6bbf56f8
-    size: 6683
+    hash: 8009422638368c6dc693693be9961e59
+    size: 6691
 module:
   wPathTranslator.out:
     about:
@@ -1464,5 +1464,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: 490e6494bcba78bb0d45c5fc6bbf56f8
-        size: 6683
+        hash: 8009422638368c6dc693693be9961e59
+        size: 6691
